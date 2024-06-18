@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cliente.cpp" />
     <ClCompile Include="Livros.cpp" />
     <ClCompile Include="Livros.hpp" />
     <ClCompile Include="Multa.cpp" />

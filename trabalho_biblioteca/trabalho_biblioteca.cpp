@@ -2,8 +2,12 @@
 //
 
 #include <iostream>
+#include "Usuario.hpp"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Usuario user;
+    bool tipoUser = user.tipoUsuario();
+    std::cout << tipoUser;
+    return 0;
 }
