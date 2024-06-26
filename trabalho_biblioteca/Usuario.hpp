@@ -1,16 +1,24 @@
+#ifndef Usuario_h
+#define Usuario_h
 #include <string>
 
 class Usuario {
 public:
-	bool tipoUsuario();
+	Usuario(std::string nome, int idade, std::string telefone);
+	
+	std::string getNome();
+	int getIdade();
+	std::string getTelefone();
 
-private:
-	int id;
-	std::string nome;
-	std::string telefone;
-	bool Administrador;
+	void setNome(std::string nome);
+	void setIdade(int idade);
+	void setTelefone(std::string telefone);
 
+	void printDados();
 
 protected:
-	
+	std::string nome;
+	int idade;
+	std::string telefone;
 };
+#endif

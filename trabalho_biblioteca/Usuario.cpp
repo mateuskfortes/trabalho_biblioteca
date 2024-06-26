@@ -1,24 +1,41 @@
 #include <iostream>
+#include <string>
 #include "Usuario.hpp"
 
-using namespace std;
+Usuario::Usuario(std::string nome, int idade, std::string telefone): nome(nome), idade(idade), telefone(telefone) {}
 
-bool Usuario::tipoUsuario() {
-	string perguntaUsuario;
-	cout << "O Usuário em questão é um cliente ou administrador?\nEscreva 'Cliente' ou 'Administrador' para a respectiva escolha. :" << endl;
-	cin >> perguntaUsuario;
+/* GET */
 
-	if (perguntaUsuario == "Cliente") {
-		Usuario::Administrador = false;
-	}
+std::string Usuario::getNome() {
+	return nome;
+}
 
-	else if (perguntaUsuario == "Administrador") {
-		Usuario:: Administrador = true;
-	}
+int Usuario::getIdade() {
+	return idade;
+}
 
-	else {
-		cout << "Código Inválido.";
-	}
+std::string Usuario::getTelefone() {
+	return telefone;
+}
 
-	return Usuario::Administrador;
-};
+/* SET */
+
+void Usuario::setNome(std::string nome) {
+	this->nome = nome;
+}
+
+void Usuario::setIdade(int idade) {
+	this->idade = idade;
+}
+
+void Usuario::setTelefone(std::string telefone) {
+	this->telefone = telefone;
+}
+
+/* USUARIO */
+
+void Usuario::printDados() {
+	std::cout << "Nome: " << nome << std::endl;
+	std::cout << "Idade: " << idade << std::endl;
+	std::cout << "Telefone: " << telefone << std::endl;
+}

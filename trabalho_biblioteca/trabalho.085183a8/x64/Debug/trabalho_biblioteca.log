@@ -1,4 +1,5 @@
-﻿  Usuario.cpp
-  trabalho_biblioteca.cpp
-  Gerando Código...
-  trabalho_biblioteca.vcxproj -> C:\Users\Alunos\Documents\GitHub\trabalho_biblioteca\trabalho_biblioteca\x64\Debug\trabalho_biblioteca.exe
+﻿  trabalho_biblioteca.cpp
+trabalho.085183a8\x64\Debug\Livro.obj : warning LNK4042: objeto especificado mais de uma vez; extras ignorados
+Cliente.obj : error LNK2019: símbolo externo não resolvido, "public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl Livro::getTitulo(void)" (?getTitulo@Livro@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ), referenciado na função "public: void __cdecl Cliente::addLivrosEmprestados(class Livro *)" (?addLivrosEmprestados@Cliente@@QEAAXPEAVLivro@@@Z)
+trabalho_biblioteca.obj : error LNK2019: símbolo externo não resolvido, "public: __cdecl Livro::Livro(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)" (??0Livro@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00H@Z), referenciado na função main
+C:\Users\mateu\OneDrive\Documentos\GitHub\trabalho_biblioteca\trabalho_biblioteca\x64\Debug\trabalho_biblioteca.exe : fatal error LNK1120: 2 externo não resolvidos
