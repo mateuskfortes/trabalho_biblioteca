@@ -33,6 +33,7 @@ private:
 	std::map <std::string, Cliente*> clientes;
 	std::map <std::string, Administrador*> administradores;
 	std::map <std::string, Livro*> livros;
+
 	float limite_multa;
 	float multa_por_dia_atraso;
 	int id_user;

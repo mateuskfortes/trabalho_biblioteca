@@ -9,7 +9,7 @@ disponiveis(disponiveis)
 {}
 
 std::string Livro::getTitulo() {
-	return titulo;
+	return this->titulo;
 }
 
 int Livro::getDisponiveis() {

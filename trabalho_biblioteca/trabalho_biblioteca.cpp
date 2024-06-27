@@ -2,15 +2,19 @@
 // .\biblioteca.exe
 
 #include <iostream>
-#include "Cliente.hpp"
-#include "Livro.hpp"
+#include "Usuario.hpp"
+#include "Biblioteca.hpp"
 
 
 int main()
 {
-    Cliente cli("oi", 12, "56y7u");
-    Livro l("rew", "5678", "678i", 5);
-    cli.addLivrosEmprestados(&l);
-    cli.printDados();
+    Biblioteca bibs(5, 1);
+    Usuario* user = bibs.cadastrarCliente();
+    bibs.cadastrarLivro();
+    bibs.emprestarLivro((Cliente*)user);
+    dynamic_cast<Cliente*>((Cliente*)user)->devolverTodosLivros();
+    dynamic_cast<Cliente*>((Cliente*)user)->printLivrosEmprestados();
+    bibs.printLivros();
+
     return 0;
 }

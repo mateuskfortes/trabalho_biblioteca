@@ -12,6 +12,7 @@ class Livro {
 
 		bool removeDisponiveis(); // retorna true se o emprestimo foi bem sucedido, se nao retorna false
 		void addDisponiveis();
+		bool estaDisponivel();
 	
 	private:
 		std::string titulo;
@@ -19,7 +20,6 @@ class Livro {
 		std::string editora;
 		int disponiveis;
 
-		bool estaDisponivel();
 };
 #endif
 

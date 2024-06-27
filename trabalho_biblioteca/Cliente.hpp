@@ -15,8 +15,10 @@ public:
 	void addDivida(float valor);
 	void pagarDvivida(float valor);
 
-	void addLivrosEmprestados(Livro* livro);
-	void removeLivrosEmprestados(Livro* livro);
+	bool addLivrosEmprestados(Livro* livro);  // retorna true se a operaçao foi bem sucedida
+	bool removeLivrosEmprestados(std::string livro);
+	bool livroEstaEmprestado(std::string nome_livro);
+	void devolverTodosLivros();
 	void printLivrosEmprestados();
 
 private:

@@ -16,6 +16,11 @@ public:
 
 	void printDados();
 
+	/* VIRTUAL */
+	
+	void devolverTodosLivros() {}
+	void printLivrosEmprestados(){}
+
 protected:
 	std::string nome;
 	int idade;

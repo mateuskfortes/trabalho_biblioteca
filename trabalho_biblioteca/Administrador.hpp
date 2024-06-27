@@ -7,7 +7,7 @@ class Administrador:public Usuario {
 public:
 	Administrador(std::string nome, int idade, std::string telefone, std::string senha);
 	bool admValido(std::string senha);
-	bool setSenha(std::string senhaAntiga, std::string senhaNova); // retorna true se a mudança de senha foi bem sucedida
+	void setSenha(std::string senha);
 
 private:
 	std::string senha;
