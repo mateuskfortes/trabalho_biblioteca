@@ -3,11 +3,12 @@
 #include "Livro.hpp"
 #include "Cliente.hpp"
 #include "Administrador.hpp"
+#include "Emprestimo.hpp"
 #include "Biblioteca.hpp"
 
-Biblioteca::Biblioteca(float max_multa, float multa_dia): 
-	id_user(0), 
-	id_livro(0), 
+Biblioteca::Biblioteca(int duracao_maxima_emprestimo, float max_multa, float multa_dia) :
+	id_emprestimo(0),
+	duracao_maxima_emprestimo(duracao_maxima_emprestimo),
 	limite_multa(max_multa), 
 	multa_por_dia_atraso(multa_dia)
 {}
@@ -48,7 +49,7 @@ void Biblioteca::alterarDadosCliente(Cliente* cliente) {
 	while (true) {
 		std::cout << "O que deseja alterar\n(1) - nome\n(2) - idade\n(3) - telefone\n(0) - sair\nSua escolha: ";
 		std::cin >> escolha;
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');;
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
 		switch (escolha) {
 		case 0:
@@ -77,9 +78,25 @@ void Biblioteca::alterarDadosCliente(Cliente* cliente) {
 	}
 }
 
-void removerCliente(Cliente* cliente) {
-	std::cout << "Deseja excluir essa conta (0 - voltar, 1 - excluir): ";
-	
+void Biblioteca::removerCliente(Cliente* cliente) {
+	int escolha;
+	while (true)
+	{
+		std::cout << "Deseja excluir essa conta (0 - voltar, 1 - excluir): ";
+		std::cin >> escolha;
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		switch (escolha)
+		{
+		case 0:
+			return;
+		case 1:
+			clientes.erase(cliente->getNome());
+			delete cliente;
+			return;
+		default:
+			break;
+		}
+	}
 }
 
 void Biblioteca::printClientes() {
@@ -187,6 +204,11 @@ void Biblioteca::alterarDadosAdministrador(Administrador* adm) {
 	}
 }
 
+void Biblioteca::removerAdministrador(Administrador* adm) {
+	administradores.erase(adm->getNome());
+	delete adm;
+}
+
 void Biblioteca::printAdministradores() {
 	std::cout << "Administradores: ";
 	for (const auto& adm : administradores) {
@@ -244,7 +266,10 @@ void Biblioteca::emprestarLivro(Cliente* cliente) {
 		if (cliente->livroEstaEmprestado(nome_livro)) std::cout << "Voce ja alugou esse livro." << std::endl;
 
 		else if (livro != livros.end()) {
-			if (cliente->addLivrosEmprestados(livro->second)) {
+			if (livro->second->removeDisponiveis()) {
+				Emprestimo* emprestimo = new Emprestimo(++id_emprestimo, duracao_maxima_emprestimo, cliente, livro->second);
+				cliente->addEmprestimo(emprestimo);
+				Emprestimos_ativos[emprestimo->getId()] = emprestimo;
 				std::cout << "Livro " << livro->second->getTitulo() << " emprestado com sucesso!" << std::endl;
 			}
 			else std::cout << "Este livro nao esta disponivel." << std::endl;
@@ -260,7 +285,10 @@ void Biblioteca::devolverLivro(Cliente* cliente) {
 		cliente->printLivrosEmprestados();
 		std::cout << "Livro que deseja devolver (0 - sair): ";
 		std::getline(std::cin, nome_livro);
-		if (cliente->removeLivrosEmprestados(nome_livro)) {
+		Emprestimo* emprestimo = cliente->removerEmprestimo(nome_livro, multa_por_dia_atraso);
+		if (emprestimo) {
+			Emprestimos_ativos.erase(emprestimo->getId());
+			Emprestimos_encerrados[emprestimo->getId()] = emprestimo;
 			std::cout << "Livro devolvido com sucesso!" << std::endl;
 		}
 		else if (nome_livro == "0") return;
@@ -277,6 +305,46 @@ void Biblioteca::printLivros() {
 		std::cout << livro.first << ": " << livro.second->getDisponiveis() << ", ";
 	}
 	std::cout << std::endl;
+}
+
+/* EMPRESTIMOS */
+
+void Biblioteca::printEmprestimosAtivos() {
+	for (const auto& emprestimo : Emprestimos_ativos) {
+		std::cout << "id: " << emprestimo.second->getId() << std::endl;
+		std::cout << "Cliente: " << emprestimo.second->getCliente()->getNome() << std::endl;
+		std::cout << "Livro: " << emprestimo.second->getLivro()->getTitulo() << std::endl;
+		std::cout << "*----------*" << std::endl;
+	}
+}
+void Biblioteca::printEmprestimosEncerrados() {
+	for (const auto& emprestimo : Emprestimos_encerrados) {
+		std::cout << "id: " << emprestimo.second->getId() << std::endl;
+		std::cout << "Cliente: " << emprestimo.second->getCliente()->getNome() << std::endl;
+		std::cout << "Livro: " << emprestimo.second->getLivro()->getTitulo() << std::endl;
+		std::cout << "*----------*" << std::endl;
+	}
+}
+
+/* DIVIDAS */
+
+void Biblioteca::checarDivida(Cliente* cliente) {
+	std::cout << "Sua divida eh R$" << cliente->getDivida() << std::endl;
+}
+
+void Biblioteca::pagarDivida(Cliente* cliente) {
+	float pagamento;
+	float troco = 0;
+	checarDivida(cliente);
+	std::cout << "Valor do pagamento: R$";
+	std::cin >> pagamento;
+	troco = cliente->pagarDvivida(pagamento);
+	std::cout << "Pagamento realizado!" << std::endl;
+	if (troco > 0) {
+		std::cout << "Seu troco eh R$" << troco << std::endl;;
+	}
+	checarDivida(cliente);
+
 }
 
 /* PRIVATE */

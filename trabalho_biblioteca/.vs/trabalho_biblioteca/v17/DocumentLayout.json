@@ -7,24 +7,28 @@
       "RelativeMoniker": "D:0:0:{085183A8-F8E0-4937-AF09-8C83CE7923A0}|trabalho_biblioteca.vcxproj|solutionrelative:Biblioteca.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{085183A8-F8E0-4937-AF09-8C83CE7923A0}|trabalho_biblioteca.vcxproj|C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Biblioteca.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{085183A8-F8E0-4937-AF09-8C83CE7923A0}|trabalho_biblioteca.vcxproj|solutionrelative:Biblioteca.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{085183A8-F8E0-4937-AF09-8C83CE7923A0}|trabalho_biblioteca.vcxproj|C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Cliente.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{085183A8-F8E0-4937-AF09-8C83CE7923A0}|trabalho_biblioteca.vcxproj|solutionrelative:Cliente.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{085183A8-F8E0-4937-AF09-8C83CE7923A0}|trabalho_biblioteca.vcxproj|C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\trabalho_biblioteca.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{085183A8-F8E0-4937-AF09-8C83CE7923A0}|trabalho_biblioteca.vcxproj|solutionrelative:trabalho_biblioteca.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{085183A8-F8E0-4937-AF09-8C83CE7923A0}|trabalho_biblioteca.vcxproj|C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Livro.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{085183A8-F8E0-4937-AF09-8C83CE7923A0}|trabalho_biblioteca.vcxproj|solutionrelative:Livro.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{085183A8-F8E0-4937-AF09-8C83CE7923A0}|trabalho_biblioteca.vcxproj|C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Emprestimo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{085183A8-F8E0-4937-AF09-8C83CE7923A0}|trabalho_biblioteca.vcxproj|solutionrelative:Emprestimo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{085183A8-F8E0-4937-AF09-8C83CE7923A0}|trabalho_biblioteca.vcxproj|C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Emprestimo.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{085183A8-F8E0-4937-AF09-8C83CE7923A0}|trabalho_biblioteca.vcxproj|solutionrelative:Emprestimo.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{085183A8-F8E0-4937-AF09-8C83CE7923A0}|trabalho_biblioteca.vcxproj|C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Biblioteca.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{085183A8-F8E0-4937-AF09-8C83CE7923A0}|trabalho_biblioteca.vcxproj|solutionrelative:Biblioteca.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{085183A8-F8E0-4937-AF09-8C83CE7923A0}|trabalho_biblioteca.vcxproj|C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Cliente.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{085183A8-F8E0-4937-AF09-8C83CE7923A0}|trabalho_biblioteca.vcxproj|solutionrelative:Cliente.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{085183A8-F8E0-4937-AF09-8C83CE7923A0}|trabalho_biblioteca.vcxproj|C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Cliente.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{085183A8-F8E0-4937-AF09-8C83CE7923A0}|trabalho_biblioteca.vcxproj|solutionrelative:Cliente.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
@@ -44,11 +48,10 @@
               "RelativeDocumentMoniker": "trabalho_biblioteca.cpp",
               "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\trabalho_biblioteca.cpp",
               "RelativeToolTip": "trabalho_biblioteca.cpp",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAQwBEAAAAAAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABAAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-06-07T18:51:00.426Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -56,55 +59,39 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Emprestimo.hpp",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Emprestimo.hpp",
+              "RelativeDocumentMoniker": "Emprestimo.hpp",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Emprestimo.hpp",
+              "RelativeToolTip": "Emprestimo.hpp",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAAA8AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-28T21:07:12.774Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Livro.cpp",
-              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Livro.cpp",
-              "RelativeDocumentMoniker": "Livro.cpp",
-              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Livro.cpp",
-              "RelativeToolTip": "Livro.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAIAAAA",
+              "Title": "Emprestimo.cpp",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Emprestimo.cpp",
+              "RelativeDocumentMoniker": "Emprestimo.cpp",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Emprestimo.cpp",
+              "RelativeToolTip": "Emprestimo.cpp",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABcAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-26T22:41:14.063Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-28T21:11:25.845Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Cliente.hpp",
-              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Cliente.hpp",
-              "RelativeDocumentMoniker": "Cliente.hpp",
-              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Cliente.hpp",
-              "RelativeToolTip": "Cliente.hpp",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAiwBMAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-26T21:47:34.801Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Cliente.cpp",
-              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Cliente.cpp",
-              "RelativeDocumentMoniker": "Cliente.cpp",
-              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Cliente.cpp",
-              "RelativeToolTip": "Cliente.cpp",
-              "ViewState": "AQIAAAsAAAAAAAAAAAASwCcAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-26T21:48:03.098Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Biblioteca.hpp",
               "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Biblioteca.hpp",
               "RelativeDocumentMoniker": "Biblioteca.hpp",
               "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Biblioteca.hpp",
               "RelativeToolTip": "Biblioteca.hpp",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAWAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAB0AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-25T17:48:55.531Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-25T17:48:55.531Z"
             },
             {
               "$type": "Document",
@@ -114,10 +101,41 @@
               "RelativeDocumentMoniker": "Biblioteca.cpp",
               "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Biblioteca.cpp",
               "RelativeToolTip": "Biblioteca.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAQwFEAAAABAAAA",
+              "ViewState": "AQIAAEEBAAAAAAAAAAAIwFcBAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-06-25T17:48:56.96Z",
               "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Cliente.hpp",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Cliente.hpp",
+              "RelativeDocumentMoniker": "Cliente.hpp",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Cliente.hpp",
+              "RelativeToolTip": "Cliente.hpp",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAB8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-26T21:47:34.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Cliente.cpp",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Cliente.cpp",
+              "RelativeDocumentMoniker": "Cliente.cpp",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\trabalho_biblioteca\\trabalho_biblioteca\\Cliente.cpp",
+              "RelativeToolTip": "Cliente.cpp",
+              "ViewState": "AQIAABMAAAAAAAAAAAAAABsAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-26T21:48:03.098Z"
             }
           ]
         }

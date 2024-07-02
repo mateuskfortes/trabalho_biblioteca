@@ -3,11 +3,12 @@
 #include "Cliente.hpp"
 #include "Administrador.hpp"
 #include "Livro.hpp"
+#include "Emprestimo.hpp"
 
 class Biblioteca {
 public:
 
-	Biblioteca(float max_multa, float multa_dia);
+	Biblioteca(int duracao_maxima_emprestimo, float max_multa, float multa_dia);
 
 	Cliente* cadastrarCliente();
 	Cliente* entrarCliente();
@@ -25,19 +26,24 @@ public:
 	void emprestarLivro(Cliente* cliente);
 	void devolverLivro(Cliente* cliente);
 	void printLivros();
-	
+
+	void printEmprestimosAtivos();
+	void printEmprestimosEncerrados();
+
 	void pagarDivida(Cliente* cliente);
-	float checarDivida(Cliente* cliente);
+	void checarDivida(Cliente* cliente);
 
 private:
 	std::map <std::string, Cliente*> clientes;
 	std::map <std::string, Administrador*> administradores;
 	std::map <std::string, Livro*> livros;
+	std::map <int, Emprestimo*> Emprestimos_ativos;
+	std::map <int, Emprestimo*> Emprestimos_encerrados;
 
+	int duracao_maxima_emprestimo;
 	float limite_multa;
 	float multa_por_dia_atraso;
-	int id_user;
-	int id_livro;
+	int id_emprestimo;
 
 	bool clienteEstaCadastrado(Cliente* cliente);
 	bool admEstaCadastrado(Administrador* adm);

@@ -1,6 +1,4 @@
-﻿  Cliente.cpp
-  Livro.cpp
-  Gerando Código...
+﻿  Livro.cpp
 trabalho.085183a8\x64\Debug\Livro.obj : warning LNK4042: objeto especificado mais de uma vez; extras ignorados
   trabalho_biblioteca.vcxproj -> C:\Users\mateu\OneDrive\Documentos\GitHub\trabalho_biblioteca\trabalho_biblioteca\x64\Debug\trabalho_biblioteca.exe
   'pwsh.exe' não é reconhecido como um comando interno

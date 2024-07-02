@@ -130,6 +130,7 @@
     <ClCompile Include="Administrador.cpp" />
     <ClCompile Include="Biblioteca.cpp" />
     <ClCompile Include="Cliente.cpp" />
+    <ClCompile Include="Emprestimo.cpp" />
     <ClCompile Include="Livro.cpp" />
     <ClCompile Include="Livro.hpp" />
     <ClCompile Include="trabalho_biblioteca.cpp" />
@@ -139,6 +140,7 @@
     <ClInclude Include="Administrador.hpp" />
     <ClInclude Include="Biblioteca.hpp" />
     <ClInclude Include="Cliente.hpp" />
+    <ClInclude Include="Emprestimo.hpp" />
     <ClInclude Include="Usuario.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
