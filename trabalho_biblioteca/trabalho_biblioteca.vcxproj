@@ -135,6 +135,7 @@
     <ClCompile Include="Livro.hpp" />
     <ClCompile Include="trabalho_biblioteca.cpp" />
     <ClCompile Include="Usuario.cpp" />
+    <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Administrador.hpp" />
@@ -142,6 +143,7 @@
     <ClInclude Include="Cliente.hpp" />
     <ClInclude Include="Emprestimo.hpp" />
     <ClInclude Include="Usuario.hpp" />
+    <ClInclude Include="Util.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

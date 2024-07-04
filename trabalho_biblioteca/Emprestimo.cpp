@@ -10,6 +10,7 @@ Emprestimo::Emprestimo(int id, int duracao_maxima, Cliente* cliente, Livro* livr
 	this->data_emprestimo = std::chrono::system_clock::to_time_t(agora);
 	this->data_devolucao_esperada = data_emprestimo + (duracao_maxima * 86400);
 	this->data_devolucao = 0;
+	this->dias_atraso = 0;
 	this->cliente = cliente;
 	this->livro = livro;
 }

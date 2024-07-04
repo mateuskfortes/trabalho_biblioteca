@@ -27,8 +27,8 @@ float Cliente::pagarDvivida(float valor) {
 		return 0;
 	}
 	else {
-		divida = 0;
 		return valor - divida;
+		divida = 0;
 	}
 }
 

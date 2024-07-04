@@ -5,6 +5,7 @@
 #include "Administrador.hpp"
 #include "Emprestimo.hpp"
 #include "Biblioteca.hpp"
+#include "Util.hpp"
 
 Biblioteca::Biblioteca(int duracao_maxima_emprestimo, float max_multa, float multa_dia) :
 	id_emprestimo(0),
@@ -16,30 +17,43 @@ Biblioteca::Biblioteca(int duracao_maxima_emprestimo, float max_multa, float mul
 /* CLIENTE */
 
 Cliente* Biblioteca::cadastrarCliente() {
+	
 	std::string nome;
 	int idade;
 	std::string telefone;
-	std::cout << "Digite seu login: ";
-	std::getline(std::cin, nome);
-	std::cout << "Digite sua idade: ";
-	std::cin >> idade;
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');;
-	std::cout << "Digite seu telefone: ";
-	std::getline(std::cin, telefone);
-	Cliente* novo_cliente = new Cliente(nome, idade, telefone);
-	clientes[novo_cliente->getNome()] = novo_cliente;
-	return novo_cliente;
+	while (true) {
+		std::cout << "Digite seu login: ";
+		std::getline(std::cin, nome);
+		auto cliente = clientes.find(nome);
+		if (cliente == clientes.end()) {
+			std::cout << "Digite sua idade: ";
+			Util::consoleIn(idade);
+			std::cout << "Digite seu telefone: ";
+			std::getline(std::cin, telefone);
+			Cliente* novo_cliente = new Cliente(nome, idade, telefone);
+			clientes[novo_cliente->getNome()] = novo_cliente;
+			return novo_cliente;
+		}
+		else {
+			std::cout << "Esse usuario ja existe" << std::endl;
+		}
+	}
 }
 
 Cliente* Biblioteca::entrarCliente() {
 	std::string nome;
-	std::cout << "Digite seu login: ";
-	std::getline(std::cin, nome);
-	std::map<std::string, Cliente*>::iterator cliente = clientes.find(nome);
-	if (cliente != clientes.end()) {
-		return cliente->second;
+	while (true) {
+		std::cout << "Digite o login do cliente (0 para sair): ";
+		std::getline(std::cin, nome);
+		std::map<std::string, Cliente*>::iterator cliente = clientes.find(nome);
+		if (cliente != clientes.end()) {
+			return cliente->second;
+		}
+		else if (nome == "0") {
+			return nullptr;
+		}
+		else std::cout << "Cliente nao encontrado" << std::endl;
 	}
-	else return cliente->second;
 }
 
 void Biblioteca::alterarDadosCliente(Cliente* cliente) {
@@ -48,8 +62,7 @@ void Biblioteca::alterarDadosCliente(Cliente* cliente) {
 	int escolha;
 	while (true) {
 		std::cout << "O que deseja alterar\n(1) - nome\n(2) - idade\n(3) - telefone\n(0) - sair\nSua escolha: ";
-		std::cin >> escolha;
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		Util::consoleIn(escolha);
 
 		switch (escolha) {
 		case 0:
@@ -61,8 +74,7 @@ void Biblioteca::alterarDadosCliente(Cliente* cliente) {
 			break;
 		case 2:
 			std::cout << "Digite a nova idade: ";
-			std::getline(std::cin, string);
-			inteiro = std::stoi(string);
+			Util::consoleIn(inteiro);
 			cliente->setIdade(inteiro);
 			break;
 		case 3:
@@ -83,8 +95,7 @@ void Biblioteca::removerCliente(Cliente* cliente) {
 	while (true)
 	{
 		std::cout << "Deseja excluir essa conta (0 - voltar, 1 - excluir): ";
-		std::cin >> escolha;
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		Util::consoleIn(escolha);
 		switch (escolha)
 		{
 		case 0:
@@ -102,7 +113,7 @@ void Biblioteca::removerCliente(Cliente* cliente) {
 void Biblioteca::printClientes() {
 	std::cout << "Clientes: ";
 	for (const auto& cliente : clientes) {
-		std::cout << cliente.first << " ";
+		std::cout << cliente.first << ", ";
 	}
 	std::cout << std::endl;
 }
@@ -115,22 +126,28 @@ Administrador* Biblioteca::cadastrarAdministrador() {
 	std::string telefone;
 	std::string senha;
 
-	std::cout << "Digite o login: ";
-	std::getline(std::cin, nome);
+	while (true) {
+		std::cout << "Digite o login do novo adm: ";
+		std::getline(std::cin, nome);
+		auto adm = administradores.find(nome);
+		if (adm == administradores.end()) {
+			std::cout << "Digite sua idade: ";
+			Util::consoleIn(idade);
 
-	std::cout << "Digite sua idade: ";
-	std::cin >> idade;
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');;
+			std::cout << "Digite seu telefone: ";
+			std::getline(std::cin, telefone);
 
-	std::cout << "Digite seu telefone: ";
-	std::getline(std::cin, telefone);
+			std::cout << "Digite sua senha: ";
+			std::getline(std::cin, senha);
 
-	std::cout << "Digite sua senha: ";
-	std::getline(std::cin, senha);
-
-	Administrador* novo_adm = new Administrador(nome, idade, telefone, senha);
-	administradores[novo_adm->getNome()] = novo_adm;
-	return novo_adm;
+			Administrador* novo_adm = new Administrador(nome, idade, telefone, senha);
+			administradores[novo_adm->getNome()] = novo_adm;
+			return novo_adm;
+		}
+		else {
+			std::cout << "Esse administrador ja existe" << std::endl;
+		}
+	}
 }
 
 Administrador* Biblioteca::entrarAdministrador() {
@@ -138,7 +155,7 @@ Administrador* Biblioteca::entrarAdministrador() {
 	std::string senha;
 	std::map<std::string, Administrador*>::iterator adm;
 	while (true) {
-		std::cout << "Digite seu login (0 para sair): ";
+		std::cout << "Digite o login do adm (0 para sair): ";
 		std::getline(std::cin, nome);
 		adm = administradores.find(nome);
 		if (adm != administradores.end()) {
@@ -164,7 +181,7 @@ void Biblioteca::alterarDadosAdministrador(Administrador* adm) {
 	while (true) {
 		std::cout << "O que deseja alterar\n(1) - nome\n(2) - idade\n(3) - telefone\n(4) - senha\n(0) - sair\nSua escolha: ";
 		std::cin >> escolha;
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');;
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
 		switch (escolha) {
 		case 0:
@@ -205,14 +222,29 @@ void Biblioteca::alterarDadosAdministrador(Administrador* adm) {
 }
 
 void Biblioteca::removerAdministrador(Administrador* adm) {
-	administradores.erase(adm->getNome());
-	delete adm;
+	int escolha;
+	while (true)
+	{
+		std::cout << "Deseja excluir essa conta (0 - voltar, 1 - excluir): ";
+		Util::consoleIn(escolha);
+		switch (escolha)
+		{
+		case 0:
+			return;
+		case 1:
+			administradores.erase(adm->getNome());
+			delete adm;
+			return;
+		default:
+			break;
+		}
+	}
 }
 
 void Biblioteca::printAdministradores() {
 	std::cout << "Administradores: ";
 	for (const auto& adm : administradores) {
-		std::cout << adm.first << " ";
+		std::cout << adm.first << ", ";
 	}
 	std::cout << std::endl;
 }
@@ -225,7 +257,8 @@ void Biblioteca::cadastrarLivro() {
 	std::string editora;
 	int disponiveis;
 	while (true) {
-		std::cout << "Digite o titulo (0 para sair): ";
+		std::cout << "---------------------------------------------";
+		std::cout << "Digite o titulo do novo livro (0 para sair): ";
 		std::getline(std::cin, titulo);
 
 		if (titulo == "0") {
@@ -238,8 +271,7 @@ void Biblioteca::cadastrarLivro() {
 			std::cout << "Digite o nome da editora: ";
 			std::getline(std::cin, editora);
 			std::cout << "Digite a quantidade de livros disponiveis: ";
-			std::cin >> disponiveis;
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			Util::consoleIn(disponiveis);
 			Livro* livro = new Livro(titulo, autor, editora, disponiveis);
 			livros[titulo] = livro;
 			std::cout << "Livro cadastrado com sucesso!" << std::endl;
@@ -251,37 +283,45 @@ void Biblioteca::cadastrarLivro() {
 }
 
 void Biblioteca::emprestarLivro(Cliente* cliente) {
-	std::string nome_livro;
-	std::map<std::string, Livro*>::iterator livro;
-	while (true)
-	{
-		printLivros();
-		std::cout << "Digite o nome do livro que deseja emprestar (0 - sair): ";
-		std::getline(std::cin, nome_livro);
+	if (cliente->getDivida() <= limite_multa) {
 
-		if (nome_livro == "0") return;
+		std::string nome_livro;
+		std::map<std::string, Livro*>::iterator livro;
+		while (true)
+		{
+			std::cout << "---------------------------------------------" << std::endl;
+			printLivros();
+			std::cout << "Digite o nome do livro que deseja emprestar (0 - sair): ";
+			std::getline(std::cin, nome_livro);
 
-		livro = livros.find(nome_livro);
+			if (nome_livro == "0") return;
 
-		if (cliente->livroEstaEmprestado(nome_livro)) std::cout << "Voce ja alugou esse livro." << std::endl;
+			livro = livros.find(nome_livro);
 
-		else if (livro != livros.end()) {
-			if (livro->second->removeDisponiveis()) {
-				Emprestimo* emprestimo = new Emprestimo(++id_emprestimo, duracao_maxima_emprestimo, cliente, livro->second);
-				cliente->addEmprestimo(emprestimo);
-				Emprestimos_ativos[emprestimo->getId()] = emprestimo;
-				std::cout << "Livro " << livro->second->getTitulo() << " emprestado com sucesso!" << std::endl;
+			if (cliente->livroEstaEmprestado(nome_livro)) std::cout << "Voce ja alugou esse livro." << std::endl;
+
+			else if (livro != livros.end()) {
+				if (livro->second->removeDisponiveis()) {
+					Emprestimo* emprestimo = new Emprestimo(++id_emprestimo, duracao_maxima_emprestimo, cliente, livro->second);
+					cliente->addEmprestimo(emprestimo);
+					Emprestimos_ativos[emprestimo->getId()] = emprestimo;
+					std::cout << "Livro " << livro->second->getTitulo() << " emprestado com sucesso!" << std::endl;
+				}
+				else std::cout << "Este livro nao esta disponivel." << std::endl;
 			}
-			else std::cout << "Este livro nao esta disponivel." << std::endl;
-		}
 
-		else std::cout << "Livro nao encontrado." << std::endl;
+			else std::cout << "Livro nao encontrado." << std::endl;
+		}
+	}
+	else {
+		std::cout << "Pague sua divida para emprestar mais um livro" << std::endl;
 	}
 }
 
 void Biblioteca::devolverLivro(Cliente* cliente) {
 	std::string nome_livro;
 	while (true) {
+		std::cout << "---------------------------------------------";
 		cliente->printLivrosEmprestados();
 		std::cout << "Livro que deseja devolver (0 - sair): ";
 		std::getline(std::cin, nome_livro);
@@ -298,11 +338,11 @@ void Biblioteca::devolverLivro(Cliente* cliente) {
 	}
 }
 
-void Biblioteca::printLivros() {
+void Biblioteca::printLivros()  {
 	std::cout << "Livros Disponiveis: ";
 	for (const std::pair<const std::string, Livro*>& livro : livros) {
 		if (livro.second->estaDisponivel())
-		std::cout << livro.first << ": " << livro.second->getDisponiveis() << ", ";
+		std::cout << livro.first << ", ";
 	}
 	std::cout << std::endl;
 }
@@ -317,6 +357,7 @@ void Biblioteca::printEmprestimosAtivos() {
 		std::cout << "*----------*" << std::endl;
 	}
 }
+
 void Biblioteca::printEmprestimosEncerrados() {
 	for (const auto& emprestimo : Emprestimos_encerrados) {
 		std::cout << "id: " << emprestimo.second->getId() << std::endl;
